@@ -63,7 +63,7 @@ export class ListSuggestionComponent {
     }
   }
 
-  // ✅ Filtrage par titre OU catégorie (case-insensitive)
+  // Filtrage par titre OU catégorie (case-insensitive)
   get filteredSuggestions(): Suggestion[] {
     const q = this.searchText.toLowerCase().trim();
 
