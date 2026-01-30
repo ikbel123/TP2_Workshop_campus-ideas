@@ -1,27 +1,62 @@
-# CampusIdeas
+# TP Workshop 2 – Campus Ideas (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Étudiante
+- **Nom** : Ikbel Bouzouita  
+- **Email** : Ikbel.Bouzouita@esprit.tn  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
+**Campus Ideas** est une application Angular modulaire développée dans le cadre du **Workshop 2**.  
+Elle permet de gérer et afficher une liste de suggestions avec une interface moderne utilisant **Bootstrap**.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Fonctionnalités
+- Affichage d’une liste de suggestions
+- Filtrage par **titre** et **catégorie**
+- Bouton **Like** avec compteur
+- Ajout aux **favoris**
+- Affichage conditionnel selon le **statut** :
+  - Acceptée
+  - Refusée
+  - En attente
+- Utilisation des **components Angular**
+- Data binding (interpolation, event, two-way `ngModel`)
+- Directives Angular (`*ngFor`, `*ngIf`)
+- Interface responsive avec **Bootstrap**
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies utilisées
+- Angular
+- TypeScript
+- HTML / CSS
+- Bootstrap
+- Git & GitHub
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Prérequis
+- Node.js
+- Angular CLI
+- Git
 
-## Running end-to-end tests
+Vérification :
+```bash
+node -v
+npm -v
+ng version
+git --version
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Installation et exécution
+1️⃣ Cloner le projet
+git clone https://github.com/ikbel123/TP2_Workshop_campus-ideas.git
+2️⃣ Accéder au dossier
+cd TP2_Workshop_campus-ideas
+3️⃣ Installer les dépendances
+npm install
+4️⃣ Lancer l’application
+ng serve
+5️⃣ Ouvrir dans le navigateur
+http://localhost:4200
