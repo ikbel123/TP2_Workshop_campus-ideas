@@ -1,0 +1,81 @@
+<div class="container my-4">
+
+  <h2 class="text-center fw-bold mb-4">Liste des suggestions</h2>
+
+  <!-- Barre de recherche -->
+  <div class="mb-4">
+    <input
+      class="form-control form-control-lg"
+      type="text"
+      placeholder="Rechercher une suggestion (titre ou catégorie)"
+      [(ngModel)]="searchText"
+    />
+  </div>
+
+  <!-- Aucun résultat -->
+  <div *ngIf="filteredSuggestions.length === 0" class="alert alert-warning">
+    Aucun résultat pour : <b>{{ searchText }}</b>
+  </div>
+
+  <!-- Cards -->
+  <div *ngFor="let s of filteredSuggestions" class="card shadow-sm mb-4 card-suggestion">
+    <div class="card-body p-4">
+
+      <h4 class="fw-bold mb-2">{{ s.title }}</h4>
+
+      <div class="d-flex gap-3 mb-3 small">
+        <span class="text-primary fw-semibold">{{ s.category }}</span>
+        <span class="text-muted">{{ s.date | date:'dd MMM yyyy' }}</span>
+      </div>
+
+      <p class="text-muted mb-3">{{ s.description }}</p>
+
+      <!-- Badge status -->
+      <span
+        class="badge rounded-pill"
+        [ngClass]="{
+          'bg-success-subtle text-success': s.status === 'acceptee',
+          'bg-danger-subtle text-danger': s.status === 'refusee',
+          'bg-secondary-subtle text-secondary': s.status === 'en_attente'
+        }"
+      >
+        {{ getStatusLabel(s.status) }}
+      </span>
+
+      <!-- Boutons (cachés si refusée) -->
+      <div *ngIf="s.status !== 'refusee'" class="mt-3 d-flex gap-3">
+        <button class="btn btn-primary" (click)="like(s)">
+          👍 Like {{ s.nbLikes }}
+        </button>
+
+        <button class="btn btn-outline-secondary" (click)="addToFavorites(s)">
+          ♡ Ajouter aux favoris
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAVORIS -->
+  <div class="mt-5">
+    <h4 class="fw-bold mb-3">Favoris ({{ favorites.length }})</h4>
+
+    <div *ngIf="favorites.length === 0" class="text-muted">
+      Aucun favori pour le moment.
+    </div>
+
+    <div *ngFor="let f of favorites" class="card mb-2">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div>
+          <div class="fw-semibold">{{ f.title }}</div>
+          <div class="small text-muted">{{ f.category }}</div>
+        </div>
+
+        <span class="badge text-bg-light">
+          {{ f.date | date:'dd MMM yyyy' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
