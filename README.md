@@ -47,16 +47,25 @@ Vérification :
 node -v
 npm -v
 ng version
-git --version
-
+git --version 
+```
+---
 ## Installation et exécution
 1️⃣ Cloner le projet
+```bash
 git clone https://github.com/ikbel123/TP2_Workshop_campus-ideas.git
+```
 2️⃣ Accéder au dossier
+```bash
 cd TP2_Workshop_campus-ideas
+```
 3️⃣ Installer les dépendances
+```bash
 npm install
+```
 4️⃣ Lancer l’application
+```bash
 ng serve
+```
 5️⃣ Ouvrir dans le navigateur
 http://localhost:4200
